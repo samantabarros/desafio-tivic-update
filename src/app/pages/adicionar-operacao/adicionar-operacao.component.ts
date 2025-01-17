@@ -60,7 +60,7 @@ export class AdicionarOperacaoComponent  {
     this.dadosService.getDadosOperacoes().subscribe((data) => {
       this.dadosOperacao = data;
       console.log(this.dadosOperacao);
-      
+
 
       this.veiculos = this.dadosOperacao.map((operacao: any) => operacao.veiculosUtilizados);
       console.log(this.veiculos);
@@ -68,14 +68,21 @@ export class AdicionarOperacaoComponent  {
   }*/
 
   submit(){
+    console.log(this.operacaoForm.value)
     if (this.operacaoForm.valid) {
+      if(this.operacaoForm.value.status === 'Em andamento'){
+        this.operacaoForm.value.status ='em_andamento'
+      }else if(this.operacaoForm.value.status === 'Finalizada'){
+         this.operacaoForm.value.status = 'finalizada'
+      }
+      console.log(this.operacaoForm.value.status);
       this.addOperacaoService.addOperacao(this.operacaoForm.value.responsavel, this.operacaoForm.value.data, this.operacaoForm.value.local, this.operacaoForm.value.veiculos, this.operacaoForm.value.status).subscribe({
         next: () => this.toastService.success("Operação adicionada com sucesso!"),
         error: () => this.toastService.error("Erro ao cadastrar operação! Tente novamente.")
       });
     }
   }
-  
+
   navigate(): void{
     this.router.navigate(["operacoes"])
   }

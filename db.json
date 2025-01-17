@@ -118,7 +118,7 @@
         "Carro A",
         "Carro B"
       ],
-      "status": "Em andamento"
+      "status": "em_andamento"
     },
     {
       "id": "f052",
@@ -128,7 +128,49 @@
       "veiculos": [
         "Carro A"
       ],
-      "status": "Em andamento"
+      "status": "em_andamento"
+    },
+    {
+      "id": "8cd0",
+      "responsavel": "Samanta",
+      "data": "2024-12-30T03:00:00.000Z",
+      "local": "Vitória da Conquista",
+      "veiculos": [
+        "Carro A"
+      ],
+      "status": "em_andamento"
+    },
+    {
+      "id": "035c",
+      "responsavel": "Luciana ",
+      "data": "2024-05-05T03:00:00.000Z",
+      "local": "Maetinga",
+      "veiculos": [
+        "Carro A"
+      ],
+      "status": "em_andamento"
+    },
+    {
+      "id": "fc63",
+      "responsavel": "Teste ",
+      "data": "2024-11-04T03:00:00.000Z",
+      "local": "Caraíbas",
+      "veiculos": [
+        "Carro A"
+      ],
+      "status": "em_andamento"
+    },
+    {
+      "id": "1587",
+      "responsavel": "Teste Finalizada",
+      "data": "2024-11-04T03:00:00.000Z",
+      "local": "Caraíbas",
+      "veiculos": [
+        "Carro A",
+        "Carro B",
+        "Carro C"
+      ],
+      "status": "finalizada"
     }
   ],
   "totalOperacoes": 3

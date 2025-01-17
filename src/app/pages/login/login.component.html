@@ -1,18 +1,18 @@
 <app-login-layout title="Entre na sua conta" btnLoginText="Entrar" btnCadastroText="Cadastrar" (submit)="submit()" (navigate)="navigate()" [disableBtn]="!loginForm.valid">
     <form [formGroup]="loginForm">
-        <app-default-input 
-            inputName="email" 
-            type="email" 
-            label="Usuário" 
-            placeholder="admin@gmail.com"
+        <app-default-input
+            inputName="email"
+            type="email"
+            label="Usuário"
+            placeholder="exemplo@gmail.com"
             formControlName="email"
         >
             <mat-icon>person</mat-icon>
         </app-default-input>
         <app-default-input
-            inputName="password" 
-            type="password" 
-            label="Senha" 
+            inputName="password"
+            type="password"
+            label="Senha"
             placeholder="***********"
             formControlName="password"
         >

@@ -6,7 +6,7 @@
   background-color: #82821B;
   color: #ffffff;
   height: 40px;
-  
+
   .header-right{
     display: flex;
     align-items: center;
@@ -17,15 +17,22 @@
   }
   .mat-icon{
     margin-right: 8px;
+    display: flex;
+    align-items: center;
   }
 
   .menu{
-    background: none; 
-    border: none; 
-    padding: 0; 
+    background: none;
+    border: none;
+    padding: 0;
     color: white;
     cursor: pointer;
-    
+
+  }
+
+  img{
+    width: 15vh;
+    margin: 0 0 0 8px;
   }
 
 }

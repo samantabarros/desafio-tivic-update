@@ -23,7 +23,6 @@ main {
         justify-content: center;
 
         img {
-
             max-width: 100%;
             max-height: 100%;
 
@@ -36,6 +35,8 @@ main {
 
         img {
             margin-bottom: 30px;
+            margin-top: 20px;
+            width: 20vh;
         }
 
         h2 {
@@ -100,6 +101,18 @@ main {
     }
 }
 
+@media only screen and (min-width: 600px) {
+  main {
+      .form-section {
+          img{
+            width: 30vh;
+          }
+
+      }
+  }
+
+}
+
 @media only screen and (min-width: 1024px) {
     main {
         .main-section {
@@ -108,8 +121,9 @@ main {
 
         .form-section {
             padding: 0 70px;
-
         }
     }
 
 }
+
+

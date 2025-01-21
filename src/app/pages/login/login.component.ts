@@ -35,7 +35,6 @@ export class LoginComponent {
       error: () => this.toastService.error("Usuário ou senha inválidos! Tente novamente.")
 
     })
-    console.log(this.loginForm.value);
   }
 
   navigate(){

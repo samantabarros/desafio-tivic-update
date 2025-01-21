@@ -8,12 +8,11 @@ import { SidebarService } from '../../services/sidebar.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() username: string = "";
-  
+
   constructor(public sidebarService:  SidebarService) { }
-  ngOnInit(): void { }
   toggleSideBar(): void {
-    this.sidebarService.toggleSidebar();
+    this.sidebarService.toggleMenu();
   }
 }

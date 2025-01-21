@@ -5,16 +5,15 @@ import { BehaviorSubject, Observable } from "rxjs";
   providedIn: 'root'
 })
 export class SidebarService {
-  private sidebarOpenSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  public sidebarOpen$: Observable<boolean> = this.sidebarOpenSubject.asObservable();
 
-  constructor() {}
+  private menuVisibleSubject = new BehaviorSubject<boolean>(true);
 
-  public toggleSidebar(): void {
-    console.log("Entrou aqui")!
-    const currentState = this.sidebarOpenSubject.getValue();
-    this.sidebarOpenSubject.next(!currentState);
-    console.log(currentState);
-    console.log(this.sidebarOpenSubject);
+  get MenuVisible$():Observable<boolean>{
+    return this.menuVisibleSubject.asObservable();
+  }
+
+  toggleMenu(): void {
+    const currentVisibility = this.menuVisibleSubject.value;
+    this.menuVisibleSubject.next(!currentVisibility);
   }
 }

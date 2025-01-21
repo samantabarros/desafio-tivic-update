@@ -1,5 +1,5 @@
 <app-header username="Usuário"></app-header>
-<div class="conteudo-page">
+<div [class.sidebar-hidden]="!menuVisible" class="conteudo-page">
     <app-sidebar></app-sidebar>
     <main>
         <router-outlet></router-outlet>

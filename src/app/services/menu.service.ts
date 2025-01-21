@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class SidebarService {
+export class MenuService {
 
   private menuVisibleSubject = new BehaviorSubject<boolean>(true);
 

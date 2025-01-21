@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from "../../components/footer/footer.component";
-import { SidebarComponent } from "../../components/sidebar/sidebar.component";
+import { MenuComponent} from "../../components/menu/menu.component";
 import { RouterOutlet } from '@angular/router';
-import { SidebarService } from '../../services/sidebar.service';
+import { MenuService} from '../../services/menu.service';
 
 @Component({
   selector: 'app-main-layout',
-  imports: [HeaderComponent, FooterComponent, SidebarComponent, RouterOutlet],
+  imports: [HeaderComponent, FooterComponent, MenuComponent, RouterOutlet],
   templateUrl: './main-layout.component.html',
   styleUrl: './main-layout.component.scss'
 })
 export class MainLayoutComponent implements OnInit {
   menuVisible: boolean = true;
-  constructor(private sidebarService: SidebarService){}
+  constructor(private menuService: MenuService){}
   ngOnInit(): void{
-    this.sidebarService.MenuVisible$.subscribe(visible => {
+    this.menuService.MenuVisible$.subscribe(visible => {
       this.menuVisible = visible
     } );
   }

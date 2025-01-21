@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { SidebarService } from '../../services/sidebar.service';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +11,8 @@ import { SidebarService } from '../../services/sidebar.service';
 export class HeaderComponent {
   @Input() username: string = "";
 
-  constructor(public sidebarService:  SidebarService) { }
-  toggleSideBar(): void {
-    this.sidebarService.toggleMenu();
+  constructor(public menuService:  MenuService) { }
+  toggleMenu(): void {
+    this.menuService.toggleMenu();
   }
 }

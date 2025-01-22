@@ -5,7 +5,7 @@
             <mat-icon>arrow_back_ios</mat-icon>
             Voltar
         </button>
-    </div>  
+    </div>
     <mat-card>
       <mat-card-title class="title-style">Adicionar Operação</mat-card-title>
       <mat-card-content>
@@ -15,26 +15,24 @@
             <mat-label>Nome do Responsável</mat-label>
             <input matInput formControlName="responsavel" required />
           </mat-form-field>
-  
-
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Data</mat-label>
             <input matInput [matDatepicker]="picker" formControlName="data" required />
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-  
-       
+
+
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Local</mat-label>
             <input matInput formControlName="local" required />
           </mat-form-field>
-  
+
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Veículos Utilizados</mat-label>
             <mat-select formControlName="veiculos" multiple>
               <mat-option *ngFor="let veiculo of veiculos" [value]="veiculo">
-                {{ veiculo}}
+                {{ veiculo }}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -42,13 +40,15 @@
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Status da Operação</mat-label>
             <mat-select formControlName="status" required>
-              <mat-option *ngFor="let status of statusOpcoes" [value]="status">
-                {{ status }}
-              </mat-option>
+              @for(status of statusOpcoes; track status){
+                <mat-option [value]="status">
+                  {{ status }}
+                </mat-option>
+              }
             </mat-select>
           </mat-form-field>
-  
-   
+
+
           <div class="buttons-wrapper">
             <button mat-raised-button color="warn" type="button" (click)="onCancelar()">Cancelar</button>
             <button mat-raised-button color="primary" type="submit" [disabled]="operacaoForm.invalid">Salvar</button>
@@ -57,4 +57,3 @@
       </mat-card-content>
     </mat-card>
   </div>
-  

@@ -54,6 +54,7 @@
   "operacoes": [
     {
       "id": "1",
+      "operacao": "001",
       "nomeResponsavel": "João Silva",
       "data": "2025-01-10",
       "local": "Vitória da Conquista",
@@ -75,6 +76,7 @@
     },
     {
       "id": "2",
+      "operacao": "002",
       "nomeResponsavel": "Maria Oliveira",
       "data": "2025-01-08",
       "local": "Anagé",
@@ -90,6 +92,7 @@
     },
     {
       "id": "3",
+      "operacao": "003",
       "nomeResponsavel": "Carlos Souza",
       "data": "2025-01-09",
       "local": "Vitória da Conquista",
@@ -111,6 +114,7 @@
     },
     {
       "id": "6b88",
+      "operacao": "004",
       "responsavel": "Samanta",
       "data": "2024-11-14T03:00:00.000Z",
       "local": "Vitória da Conquista",
@@ -122,6 +126,7 @@
     },
     {
       "id": "f052",
+      "operacao": "005",
       "responsavel": "Teste",
       "data": "2024-11-14T03:00:00.000Z",
       "local": "Vitória da Conquista",
@@ -132,6 +137,7 @@
     },
     {
       "id": "8cd0",
+      "operacao": "006",
       "responsavel": "Samanta",
       "data": "2024-12-30T03:00:00.000Z",
       "local": "Vitória da Conquista",
@@ -142,6 +148,7 @@
     },
     {
       "id": "035c",
+      "operacao": "007",
       "responsavel": "Luciana ",
       "data": "2024-05-05T03:00:00.000Z",
       "local": "Maetinga",
@@ -152,6 +159,7 @@
     },
     {
       "id": "fc63",
+      "operacao": "008",
       "responsavel": "Teste ",
       "data": "2024-11-04T03:00:00.000Z",
       "local": "Caraíbas",
@@ -162,6 +170,7 @@
     },
     {
       "id": "1587",
+      "operacao": "009",
       "responsavel": "Teste Finalizada",
       "data": "2024-11-04T03:00:00.000Z",
       "local": "Caraíbas",

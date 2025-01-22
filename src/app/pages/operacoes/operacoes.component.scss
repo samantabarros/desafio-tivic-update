@@ -1,17 +1,22 @@
-.card-container{
-    button{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 500;
-        border: none;
-        padding: 12px;
-        cursor: pointer;
-        background-color: #2173D8;
-        color: white;
-        
-       
-    }
+.card-container {
+  width: 100%;
+
+  button {
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    background-color: #2173D8;
+    color: white;
+  }
+
+  .table-style{
+    margin-top: 16px;
+  }
 }

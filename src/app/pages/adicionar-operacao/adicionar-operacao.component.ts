@@ -9,10 +9,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { GetDadosServicesService } from '../../services/get-dados-services.service';
 import { CommonModule } from '@angular/common';
 import { AdicionarOperacaoService } from '../../services/adicionar-operacao.service';
 import { ToastrService } from 'ngx-toastr';
+import { GetDadosService } from '../../services/get-dados.service';
 
 interface AdicionarOperacaoForm{
   responsavel: FormControl,
@@ -21,7 +21,6 @@ interface AdicionarOperacaoForm{
   veiculos: FormControl,
   status: FormControl
 }
-
 @Component({
   selector: 'app-adicionar-operacao',
   imports: [
@@ -46,7 +45,7 @@ export class AdicionarOperacaoComponent  {
   statusOpcoes = ['Em andamento', 'Finalizada'];
   //dadosOperacao = []
 
-  constructor(private router: Router, private fb: FormBuilder, private dadosService: GetDadosServicesService, private toastService: ToastrService, private addOperacaoService: AdicionarOperacaoService) {
+  constructor(private router: Router, private fb: FormBuilder, private dadosService: GetDadosService, private toastService: ToastrService, private addOperacaoService: AdicionarOperacaoService) {
     this.operacaoForm = this.fb.group({
       responsavel: ['', Validators.required],
       data: ['', Validators.required],

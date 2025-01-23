@@ -5,7 +5,7 @@ import { Observable, map } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class GetDadosServicesService {
+export class GetDadosService{
   apiUrl: string = 'http://localhost:3000';
 
   constructor(private httpClient: HttpClient) {}
@@ -22,16 +22,16 @@ export class GetDadosServicesService {
 
   getOperacoesEmAndamento(): Observable<number> {
     return this.httpClient.get<any[]>(this.apiUrl + '/operacoes').pipe(
-      map((operacoes) => 
+      map((operacoes) =>
         operacoes.filter((operacao) => operacao.status === 'em_andamento').length
       )
     );
   }
 
- 
+
   getOperacoesFinalizadas(): Observable<number> {
     return this.httpClient.get<any[]>(this.apiUrl + '/operacoes').pipe(
-      map((operacoes) => 
+      map((operacoes) =>
         operacoes.filter((operacao) => operacao.status === 'finalizada').length
       )
     );

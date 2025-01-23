@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { GetDadosServicesService } from '../../services/get-dados-services.service';
 import { MatIconModule } from '@angular/material/icon';
+import { GetDadosService } from '../../services/get-dados.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +13,7 @@ export class HomeComponent {
   operacoesEmAndamento: number = 0;
   operacoesFinalizadas: number = 0;
 
-  constructor(private dadosService: GetDadosServicesService) {}
+  constructor(private dadosService: GetDadosService) {}
 
   ngOnInit(): void {
     this.dadosService.getTotalOperacoes().subscribe((total) => {

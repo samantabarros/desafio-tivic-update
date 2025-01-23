@@ -1,11 +1,13 @@
-<div class="card-container">
-  <button class="btn-style" (click)="navigate()">
-    <mat-icon>add</mat-icon>
-    Adicionar Operação
-  </button>
-
-  <div class="table-style">
+<div class="operacao-container">
+  <mat-card>
+    <mat-toolbar>
+      <span>Operações</span>
+      <span class="example-spacer"></span>
+      <button class="btn-style" (click)="navigate()">
+        <mat-icon>add</mat-icon>
+        Adicionar Operação
+      </button>
+    </mat-toolbar>
     <app-table-operacoes></app-table-operacoes>
-  </div>
-
+  </mat-card>
 </div>

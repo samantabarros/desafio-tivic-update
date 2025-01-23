@@ -1,31 +1,21 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": "56yt",
       "name": "Administrador",
       "email": "administrador@gmail.com",
       "password": "administrador"
     },
     {
-      "id": "1",
+      "id": "978h",
       "name": "Maria",
       "email": "maria@gmail.com",
       "password": "administrador"
     },
     {
-      "id": "f328",
-      "email": "",
-      "password": ""
-    },
-    {
       "id": "8ed1",
       "email": "administrador@gmail.com",
       "password": "administrador"
-    },
-    {
-      "id": "1e63",
-      "email": "",
-      "password": ""
     },
     {
       "id": "47f3",
@@ -48,17 +38,17 @@
       "id": "e6f7",
       "name": "Luciana",
       "email": "luciana@gmail.com",
-      "password": "luciiana"
+      "password": "luciana"
     }
   ],
   "operacoes": [
     {
       "id": "1",
       "operacao": "001",
-      "nomeResponsavel": "João Silva",
-      "data": "2025-01-10",
+      "responsavel": "João Silva",
+      "data": "2024-11-20T03:00:00.000Z",
       "local": "Vitória da Conquista",
-      "veiculosUtilizados": [
+      "veiculos": [
         {
           "id": 101,
           "placa": "ABC-1234",
@@ -77,10 +67,10 @@
     {
       "id": "2",
       "operacao": "002",
-      "nomeResponsavel": "Maria Oliveira",
-      "data": "2025-01-08",
+      "responsavel": "Maria Oliveira",
+      "data": "2024-11-13T03:00:00.000Z",
       "local": "Anagé",
-      "veiculosUtilizados": [
+      "veiculos": [
         {
           "id": 103,
           "placa": "DEF-4321",
@@ -93,10 +83,10 @@
     {
       "id": "3",
       "operacao": "003",
-      "nomeResponsavel": "Carlos Souza",
-      "data": "2025-01-09",
+      "responsavel": "Carlos Souza",
+      "data": "2024-11-17T03:00:00.000Z",
       "local": "Vitória da Conquista",
-      "veiculosUtilizados": [
+      "veiculos": [
         {
           "id": 104,
           "placa": "GHI-8765",
@@ -116,7 +106,7 @@
       "id": "6b88",
       "operacao": "004",
       "responsavel": "Samanta",
-      "data": "2024-11-14T03:00:00.000Z",
+      "data": "2024-10-08T03:00:00.000Z",
       "local": "Vitória da Conquista",
       "veiculos": [
         "Carro A",
@@ -167,20 +157,6 @@
         "Carro A"
       ],
       "status": "em_andamento"
-    },
-    {
-      "id": "1587",
-      "operacao": "009",
-      "responsavel": "Teste Finalizada",
-      "data": "2024-11-04T03:00:00.000Z",
-      "local": "Caraíbas",
-      "veiculos": [
-        "Carro A",
-        "Carro B",
-        "Carro C"
-      ],
-      "status": "finalizada"
     }
-  ],
-  "totalOperacoes": 3
+  ]
 }

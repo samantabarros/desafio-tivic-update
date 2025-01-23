@@ -1,8 +1,11 @@
-<app-header username="Usuário"></app-header>
-<app-menu></app-menu>
-<div [class.menu-hidden]="!menuVisible" class="conteudo-page">
-    <main>
-        <router-outlet></router-outlet>
-    </main>
-</div>
-<app-footer></app-footer>
+<main>
+  <app-header username="Usuário"></app-header>
+  <app-menu></app-menu>
+  <div [class.menu-hidden]="!menuVisible" class="conteudo-page">
+      <main>
+          <router-outlet></router-outlet>
+      </main>
+  </div>
+  <app-footer></app-footer>
+</main>
+

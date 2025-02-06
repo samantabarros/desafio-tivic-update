@@ -1,4 +1,3 @@
-
 <div class="container full-width">
     <div class="btn-back">
         <button class="btn-style" (click)="navigate()">
@@ -7,7 +6,7 @@
         </button>
     </div>
     <mat-card>
-      <mat-card-title class="title-style">Adicionar Operação</mat-card-title>
+      <mat-card-title class="title-style">Editar Operação</mat-card-title>
       <mat-card-content>
         <form [formGroup]="operacaoForm" (ngSubmit)="submit()">
           <mat-form-field appearance="fill" class="full-width">
@@ -51,7 +50,7 @@
           </mat-form-field>
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Observação</mat-label>
-            <input matInput formControlName="observacao" />
+            <input matInput formControlName="observacao" required />
           </mat-form-field>
 
           <div class="buttons-wrapper">

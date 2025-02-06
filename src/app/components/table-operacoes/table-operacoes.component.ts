@@ -4,6 +4,7 @@ import { GetDadosService } from '../../services/get-dados.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 export interface DadosOperacao {
   operacao: string
@@ -31,7 +32,7 @@ export class TableOperacoesComponent {
   columnsToDisplay: string[] = ['operacao', 'responsavel', 'data', 'local', 'veiculos', 'status', 'acoes']
   dadosOperacao = [];
 
-  constructor(private dadosService: GetDadosService, private toastService: ToastrService){}
+  constructor(private dadosService: GetDadosService, private toastService: ToastrService, private router: Router){}
 
   ngOnInit(): void {
     this.dadosService.getDadosOperacoes().subscribe((data) => {
@@ -45,8 +46,7 @@ export class TableOperacoesComponent {
     });
   }
   editarOperacao(operacao: any) {
-    //this.router.navigate(['/editar-operacao', operacao.id]);
-    confirm('Operação indisponível no momento!')
+    this.router.navigate(['/editar-operacao', operacao.id]);
   }
 
 

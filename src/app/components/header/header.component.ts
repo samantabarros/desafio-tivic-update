@@ -9,10 +9,13 @@ import { MenuService } from '../../services/menu.service';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  @Input() username: string = "";
+  //@Input() username: string = "";
+  username = sessionStorage.getItem("username")
+
 
   constructor(public menuService:  MenuService) { }
   toggleMenu(): void {
     this.menuService.toggleMenu();
   }
+
 }

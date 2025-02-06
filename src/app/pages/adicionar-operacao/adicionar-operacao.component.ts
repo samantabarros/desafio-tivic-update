@@ -10,17 +10,18 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { AdicionarOperacaoService } from '../../services/adicionar-operacao.service';
+import { OperacaoService } from '../../services/operacao.service';
 import { ToastrService } from 'ngx-toastr';
 import { GetDadosService } from '../../services/get-dados.service';
 
-interface AdicionarOperacaoForm{
+interface AdicionarOperacaoForm {
   operacao: FormControl
   responsavel: FormControl,
   data: FormControl,
   local: FormControl,
   veiculos: FormControl,
-  status: FormControl
+  status: FormControl,
+  observacao: FormControl,
 }
 @Component({
   selector: 'app-adicionar-operacao',
@@ -39,21 +40,23 @@ interface AdicionarOperacaoForm{
   templateUrl: './adicionar-operacao.component.html',
   styleUrl: './adicionar-operacao.component.scss'
 })
-export class AdicionarOperacaoComponent  {
+export class AdicionarOperacaoComponent {
 
   operacaoForm!: FormGroup<AdicionarOperacaoForm>;
-  veiculos = ['Carro A', 'Carro B', 'Carro C', 'Viatura A', 'Viatura B'];
+  veiculos = ['Viatura A', 'Viatura B', 'Viatura C'];
   statusOpcoes = ['Em andamento', 'Finalizada'];
   //dadosOperacao = []
 
-  constructor(private router: Router, private fb: FormBuilder, private dadosService: GetDadosService, private toastService: ToastrService, private addOperacaoService: AdicionarOperacaoService) {
+  constructor(private router: Router, private fb: FormBuilder, private dadosService: GetDadosService, private toastService: ToastrService, private operacaoService: OperacaoService) {
     this.operacaoForm = this.fb.group({
       operacao: ['', Validators.required],
       responsavel: ['', Validators.required],
       data: ['', Validators.required],
       local: ['', Validators.required],
       veiculos: ['', Validators.required],
-      status: ['', Validators.required]
+      status: ['', Validators.required],
+      observacao: ['', Validators.required],
+
     });
   }
 
@@ -68,26 +71,37 @@ export class AdicionarOperacaoComponent  {
     });
   }*/
 
-  submit(){
-    console.log(this.operacaoForm.value)
+  submit() {
     if (this.operacaoForm.valid) {
-      if(this.operacaoForm.value.status === 'Em andamento'){
-        this.operacaoForm.value.status ='em_andamento'
-      }else if(this.operacaoForm.value.status === 'Finalizada'){
-         this.operacaoForm.value.status = 'finalizada'
+      if (this.operacaoForm.value.status === 'Em andamento') {
+        this.operacaoForm.value.status = 'em_andamento'
+      } else if (this.operacaoForm.value.status === 'Finalizada') {
+        this.operacaoForm.value.status = 'finalizada'
       }
-      this.addOperacaoService.addOperacao(this.operacaoForm.value.operacao, this.operacaoForm.value.responsavel, this.operacaoForm.value.data, this.operacaoForm.value.local, this.operacaoForm.value.veiculos, this.operacaoForm.value.status).subscribe({
-        next: () => this.toastService.success("Operação adicionada com sucesso!"),
+      this.operacaoService.addOperacao(
+        this.operacaoForm.value.operacao, 
+        this.operacaoForm.value.responsavel, 
+        this.operacaoForm.value.data, 
+        this.operacaoForm.value.local, 
+        this.operacaoForm.value.veiculos, 
+        this.operacaoForm.value.status,
+        this.operacaoForm.value.observacao,
+      ).subscribe({
+        next: (dados) => {
+          console.log('dados', dados);
+          this.router.navigate(['/editar-operacao', dados.id]);
+          this.toastService.success("Operação adicionada com sucesso!")
+        },
         error: () => this.toastService.error("Erro ao cadastrar operação! Tente novamente.")
       });
     }
   }
 
-  navigate(): void{
+  navigate(): void {
     this.router.navigate(["operacoes"])
   }
 
-  onCancelar(){
+  onCancelar() {
     this.router.navigate(["operacoes"])
   }
 

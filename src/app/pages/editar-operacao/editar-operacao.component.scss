@@ -1,0 +1,50 @@
+.container{
+   
+  
+    max-width: 90vh;
+    margin:  0 auto;
+    padding: 16px;
+
+    mat-card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-style{
+        padding: 20px;
+    }
+    
+    .btn-back{
+        display: Flex;
+        justify-content: end;
+
+        button{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            border: none;
+            padding: 12px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            color:#a7aaaf;
+             
+        }
+    }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+ 

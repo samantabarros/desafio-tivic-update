@@ -15,6 +15,9 @@ export class GetDadosService{
     return this.httpClient.get<any[]>(this.apiUrl + '/operacoes');
   }
 
+  getDadosOperacaoId(id:string): Observable<any>{
+    return this.httpClient.get<any[]>(`${this.apiUrl}/operacoes/${id}`)
+  }
   getTotalOperacoes(): Observable<number> {
     return this.httpClient.get<any[]>(this.apiUrl + '/operacoes').pipe(
       map((operacoes) => operacoes.length)

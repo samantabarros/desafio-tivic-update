@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { OperacoesComponent } from './pages/operacoes/operacoes.component';
 import { AdicionarOperacaoComponent } from './pages/adicionar-operacao/adicionar-operacao.component';
+import { EditarOperacaoComponent } from './pages/editar-operacao/editar-operacao.component';
 
 export const routes: Routes = [
 
@@ -39,6 +40,10 @@ export const routes: Routes = [
                 path:"adicionar-operacao",
                 component: AdicionarOperacaoComponent
             },
+            {
+                path: "editar-operacao/:id",
+                component: EditarOperacaoComponent
+            }
         ]
     },
 

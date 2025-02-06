@@ -10,7 +10,10 @@
       <mat-card-title class="title-style">Adicionar Operação</mat-card-title>
       <mat-card-content>
         <form [formGroup]="operacaoForm" (ngSubmit)="submit()">
-
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Operação</mat-label>
+            <input matInput formControlName="operacao" required />
+          </mat-form-field>
           <mat-form-field appearance="fill" class="full-width">
             <mat-label>Nome do Responsável</mat-label>
             <input matInput formControlName="responsavel" required />

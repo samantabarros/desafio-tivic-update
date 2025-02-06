@@ -13,22 +13,6 @@
       "password": "administrador"
     },
     {
-      "id": "8ed1",
-      "email": "administrador@gmail.com",
-      "password": "administrador"
-    },
-    {
-      "id": "47f3",
-      "email": "fadvaic@gmail.com",
-      "password": "136t2647t274"
-    },
-    {
-      "id": "351f",
-      "name": "Samanta",
-      "email": "samanta@gmail.com",
-      "password": "samanta"
-    },
-    {
       "id": "5144",
       "name": "teste",
       "email": "teste@gmail.com",
@@ -49,18 +33,9 @@
       "data": "2024-11-20T03:00:00.000Z",
       "local": "Vitória da Conquista",
       "veiculos": [
-        {
-          "id": 101,
-          "placa": "ABC-1234",
-          "modelo": "Caminhão",
-          "ano": 2020
-        },
-        {
-          "id": 102,
-          "placa": "XYZ-5678",
-          "modelo": "Van",
-          "ano": 2018
-        }
+        "Carro A",
+        "Carro B",
+        "Carro C"
       ],
       "status": "em_andamento"
     },
@@ -71,12 +46,7 @@
       "data": "2024-11-13T03:00:00.000Z",
       "local": "Anagé",
       "veiculos": [
-        {
-          "id": 103,
-          "placa": "DEF-4321",
-          "modelo": "Carro",
-          "ano": 2019
-        }
+        "Carro A"
       ],
       "status": "finalizada"
     },
@@ -87,18 +57,8 @@
       "data": "2024-11-17T03:00:00.000Z",
       "local": "Vitória da Conquista",
       "veiculos": [
-        {
-          "id": 104,
-          "placa": "GHI-8765",
-          "modelo": "Caminhão",
-          "ano": 2021
-        },
-        {
-          "id": 105,
-          "placa": "JKL-1122",
-          "modelo": "Moto",
-          "ano": 2022
-        }
+        "Carro A",
+        "Carro C"
       ],
       "status": "em_andamento"
     },
@@ -120,39 +80,6 @@
       "responsavel": "Teste",
       "data": "2024-11-14T03:00:00.000Z",
       "local": "Vitória da Conquista",
-      "veiculos": [
-        "Carro A"
-      ],
-      "status": "em_andamento"
-    },
-    {
-      "id": "8cd0",
-      "operacao": "006",
-      "responsavel": "Samanta",
-      "data": "2024-12-30T03:00:00.000Z",
-      "local": "Vitória da Conquista",
-      "veiculos": [
-        "Carro A"
-      ],
-      "status": "em_andamento"
-    },
-    {
-      "id": "035c",
-      "operacao": "007",
-      "responsavel": "Luciana ",
-      "data": "2024-05-05T03:00:00.000Z",
-      "local": "Maetinga",
-      "veiculos": [
-        "Carro A"
-      ],
-      "status": "em_andamento"
-    },
-    {
-      "id": "fc63",
-      "operacao": "008",
-      "responsavel": "Teste ",
-      "data": "2024-11-04T03:00:00.000Z",
-      "local": "Caraíbas",
       "veiculos": [
         "Carro A"
       ],

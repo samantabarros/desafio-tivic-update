@@ -7,6 +7,7 @@ import { Observable, map } from 'rxjs';
 })
 export class GetDadosService{
   apiUrl: string = 'http://localhost:3000';
+  apiUrlDois: string = 'http://localhost:3000/operacoes';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -36,4 +37,9 @@ export class GetDadosService{
       )
     );
   }
+
+  excluirOperacao(id: string): Observable<void> {
+    return this.httpClient.delete<void>(`${this.apiUrlDois}/${id}`);
+  }
+
 }

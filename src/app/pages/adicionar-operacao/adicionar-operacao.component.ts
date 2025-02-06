@@ -15,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 import { GetDadosService } from '../../services/get-dados.service';
 
 interface AdicionarOperacaoForm{
+  operacao: FormControl
   responsavel: FormControl,
   data: FormControl,
   local: FormControl,
@@ -41,12 +42,13 @@ interface AdicionarOperacaoForm{
 export class AdicionarOperacaoComponent  {
 
   operacaoForm!: FormGroup<AdicionarOperacaoForm>;
-  veiculos = ['Carro A', 'Carro B', 'Carro C'];
+  veiculos = ['Carro A', 'Carro B', 'Carro C', 'Viatura A', 'Viatura B'];
   statusOpcoes = ['Em andamento', 'Finalizada'];
   //dadosOperacao = []
 
   constructor(private router: Router, private fb: FormBuilder, private dadosService: GetDadosService, private toastService: ToastrService, private addOperacaoService: AdicionarOperacaoService) {
     this.operacaoForm = this.fb.group({
+      operacao: ['', Validators.required],
       responsavel: ['', Validators.required],
       data: ['', Validators.required],
       local: ['', Validators.required],
@@ -74,8 +76,7 @@ export class AdicionarOperacaoComponent  {
       }else if(this.operacaoForm.value.status === 'Finalizada'){
          this.operacaoForm.value.status = 'finalizada'
       }
-      console.log(this.operacaoForm.value.status);
-      this.addOperacaoService.addOperacao(this.operacaoForm.value.responsavel, this.operacaoForm.value.data, this.operacaoForm.value.local, this.operacaoForm.value.veiculos, this.operacaoForm.value.status).subscribe({
+      this.addOperacaoService.addOperacao(this.operacaoForm.value.operacao, this.operacaoForm.value.responsavel, this.operacaoForm.value.data, this.operacaoForm.value.local, this.operacaoForm.value.veiculos, this.operacaoForm.value.status).subscribe({
         next: () => this.toastService.success("Operação adicionada com sucesso!"),
         error: () => this.toastService.error("Erro ao cadastrar operação! Tente novamente.")
       });

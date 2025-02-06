@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {MatTableModule} from '@angular/material/table';
 import { GetDadosService } from '../../services/get-dados.service';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { ToastrService } from 'ngx-toastr';
 
 export interface DadosOperacao {
   operacao: string
@@ -9,7 +11,7 @@ export interface DadosOperacao {
   data: string,
   local: string,
   veiculos: string[],
-  status: string
+  status: string,
 }
 
 // const ELEMENT_DATA: DadosOperacao[] = [
@@ -21,21 +23,45 @@ export interface DadosOperacao {
 
 @Component({
   selector: 'app-table-operacoes',
-  imports: [MatTableModule, CommonModule],
+  imports: [MatTableModule, CommonModule, MatIconModule],
   templateUrl: './table-operacoes.component.html',
   styleUrl: './table-operacoes.component.scss'
 })
 export class TableOperacoesComponent {
-  columnsToDisplay: string[] = ['operacao', 'responsavel', 'data', 'local', 'veiculos', 'status']
+  columnsToDisplay: string[] = ['operacao', 'responsavel', 'data', 'local', 'veiculos', 'status', 'acoes']
   dadosOperacao = [];
 
-  constructor(private dadosService: GetDadosService){}
+  constructor(private dadosService: GetDadosService, private toastService: ToastrService){}
 
   ngOnInit(): void {
     this.dadosService.getDadosOperacoes().subscribe((data) => {
       this.dadosOperacao = data;
-      console.log(this.dadosOperacao);
     });
+  }
+
+  carregarOperacoes() {
+    this.dadosService.getDadosOperacoes().subscribe((data) => {
+      this.dadosOperacao = data;
+    });
+  }
+  editarOperacao(operacao: any) {
+    //this.router.navigate(['/editar-operacao', operacao.id]);
+    confirm('Operação indisponível no momento!')
+  }
+
+
+  excluirOperacao(id: string) {
+    if (confirm('Tem certeza que deseja excluir esta operação?')) {
+      this.dadosService.excluirOperacao(id).subscribe({
+        next: () => {
+          this.toastService.success('Operação excluída com sucesso!');
+          this.carregarOperacoes(); 
+        },
+        error: () => {
+          this.toastService.error('Erro ao excluir a operação.');
+        }
+      });
+    }
   }
 }
 

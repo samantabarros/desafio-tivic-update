@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 
 interface LoginForm {
-  email: FormControl,
+  name: FormControl,
   password: FormControl
 }
 
@@ -24,13 +24,13 @@ export class LoginComponent {
 
   constructor(private router: Router, private loginService: LoginService, private toastService: ToastrService){
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
+      name: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(4)])
     })
   }
 
   submit(){
-    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
+    this.loginService.login(this.loginForm.value.name, this.loginForm.value.password).subscribe({
       next: () => this.toastService.success("Login realizado com sucesso!"),
       error: () => this.toastService.error("Usuário ou senha inválidos! Tente novamente.")
 
@@ -38,6 +38,6 @@ export class LoginComponent {
   }
 
   navigate(){
-    this.router.navigate(["cadastro"])
+    this.router.navigate(["inicio"])
   }
 }

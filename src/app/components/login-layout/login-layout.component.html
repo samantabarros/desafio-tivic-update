@@ -1,20 +1,14 @@
-<main>
     <section class="form-section">
-        <img src="assets/svg/logo.svg" alt="Logo" />
-        <h2>{{title}}</h2>
-        <ng-content></ng-content>
-        <div class="btn-wrapper">
-            <button class="btn-login"  (click)="submit()" [disabled]="disableBtn">{{btnLoginText}}</button>
-            <div class="divider">
-                <div></div>
-                <span>ou</span>
-                <div></div>
+        <img src="assets/svg/Tela-Inicial.svg" alt="Tela inicial B.O.A" />
+        <div class="login-form">
+            <h2>{{title}}</h2>
+            <ng-content></ng-content>
+            <div class="btn-wrapper">
+                <button class="btn-voltar" (click)="navigate()" >{{btnSairText}}</button>
+                <button class="btn-login"  (click)="submit()" [disabled]="disableBtn">{{btnLoginText}}</button>
             </div>
-            <button class="btn-cadastro" (click)="navigate()" >{{btnCadastroText}}</button>
         </div>
-
+        <button class="btn btn-info-icon" aria-label="Informações">
+            i
+        </button>
     </section>
-    <section class="main-section">
-        <img src="assets/svg/avatar.svg" alt="Ilustração" />
-    </section>
-</main>

@@ -12,14 +12,14 @@ export class LoginService {
 
   constructor(private router: Router, private httpClient: HttpClient) {}
   
-  login(email: string, password: string): Observable<any>{
+  login(name: string, password: string): Observable<any>{
     return this.httpClient.get<any[]>(this.apiUrl + "/users").pipe(
       map((usuarios) => {
         const usuario = usuarios.find(
-          (u) => u.email === email && u.password === password
+          (u) => u.name === name && u.password === password
         );
         if(!usuario){
-        throw new Error('Email ou senha inválidos');
+        throw new Error('Usuário ou senha inválidos');
         }
         return usuario;
       }),
@@ -34,8 +34,8 @@ export class LoginService {
     )
   }
 
-  cadastro(name: string, email: string, password: string){
-    return this.httpClient.post<LoginResponse>(this.apiUrl + "/users", {name, email, password}).pipe(
+  cadastro(name: string, password: string){
+    return this.httpClient.post<LoginResponse>(this.apiUrl + "/users", {name, password}).pipe(
         /*tap((usuario) => {
           sessionStorage.setItem("auth-token", usuario.token)
           sessionStorage.setItem("user-name", usuario.name)

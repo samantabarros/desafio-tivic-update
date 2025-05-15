@@ -7,42 +7,8 @@ import { Observable, map } from 'rxjs';
 })
 export class GetDadosService{
   apiUrl: string = 'http://localhost:3000';
-  apiUrlDois: string = 'http://localhost:3000/operacoes';
 
   constructor(private httpClient: HttpClient) {}
 
-  public getDadosOperacoes(): Observable<any> {
-    return this.httpClient.get<any[]>(this.apiUrl + '/operacoes');
-  }
-
-  getDadosOperacaoId(id:string): Observable<any>{
-    return this.httpClient.get<any[]>(`${this.apiUrl}/operacoes/${id}`)
-  }
-  getTotalOperacoes(): Observable<number> {
-    return this.httpClient.get<any[]>(this.apiUrl + '/operacoes').pipe(
-      map((operacoes) => operacoes.length)
-    );
-  }
-
-  getOperacoesEmAndamento(): Observable<number> {
-    return this.httpClient.get<any[]>(this.apiUrl + '/operacoes').pipe(
-      map((operacoes) =>
-        operacoes.filter((operacao) => operacao.status === 'em_andamento').length
-      )
-    );
-  }
-
-
-  getOperacoesFinalizadas(): Observable<number> {
-    return this.httpClient.get<any[]>(this.apiUrl + '/operacoes').pipe(
-      map((operacoes) =>
-        operacoes.filter((operacao) => operacao.status === 'finalizada').length
-      )
-    );
-  }
-
-  excluirOperacao(id: string): Observable<void> {
-    return this.httpClient.delete<void>(`${this.apiUrlDois}/${id}`);
-  }
 
 }

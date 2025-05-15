@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 
 interface CadastroForm {
   name: FormControl,
-  email: FormControl,
   password: FormControl,
   passwordConfirm: FormControl
 }
@@ -27,16 +26,17 @@ export class CadastroComponent {
   constructor(private router: Router, private loginService: LoginService, private toastService: ToastrService){
     this.cadastroForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(4)]),
       passwordConfirm: new FormControl('', [Validators.required, Validators.minLength(4)]),
     })
   }
 
   submit(){
-    this.loginService.cadastro(this.cadastroForm.value.name, this.cadastroForm.value.email, this.cadastroForm.value.password).subscribe({
-      next: () => this.toastService.success("Cadastro realizado com sucesso!"),
+    this.loginService.cadastro(this.cadastroForm.value.name, this.cadastroForm.value.password).subscribe({
+    next: () => {this.toastService.success("Cadastro realizado com sucesso!"), this.router.navigate(["/login"])},
       error: () => this.toastService.error("Erro ao cadastrar usuário! Tente novamente.")
+   
+
 
     })
   }

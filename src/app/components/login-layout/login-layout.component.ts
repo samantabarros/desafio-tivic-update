@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class LoginLayoutComponent {
   @Input() title: string="";
   @Input() btnLoginText: string = "";
-  @Input() btnCadastroText: string="";
+  @Input() btnSairText: string="";
   @Input() disableBtn: boolean = true;
   @Output("submit") onSubmit = new EventEmitter();
   @Output("navigate") onNavigate = new EventEmitter();

@@ -1,6 +1,6 @@
-# Desafio Tivic
+# B.O.A. - Busca Ordenada Animada
 
-Sistema simplificado de gerenciamento de operações de trânsito para Lei Seca.
+Projeto de Software Educativo - B.O.A. - Busca Ordenada Animada
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -8,13 +8,6 @@ Sistema simplificado de gerenciamento de operações de trânsito para Lei Seca.
 - [TypeScript]
 - [RxJS]
 - [Angular Material]
-
-## 🚀 Funcionalidades
-
-- Login
-- Cadastro de usuários
-- Adicionar Operações
-- Dashboard com informações quantitativas sobre as operações
 
 ## 📦 Pré-requisitos
 
@@ -24,11 +17,6 @@ Sistema simplificado de gerenciamento de operações de trânsito para Lei Seca.
 ## 🖥️  Como rodar o projeto
 
 Clone este repositório
-
-```bash
-git clone https://github.com/seu-usuario/desafio-tivic.git
-
-```
 
 Entre no diretório do projeto
 

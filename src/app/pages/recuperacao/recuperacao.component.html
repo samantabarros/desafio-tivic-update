@@ -1,5 +1,5 @@
-<app-login-layout title="CADASTRO" btnLoginText="Criar" btnSairText="Voltar" (submit)="submit()" (navigate)="navigate()" [disableBtn]="!cadastroForm.valid">
-    <form [formGroup]="cadastroForm">
+<app-login-layout title="Recuperação" btnLoginText="OK" btnSairText="Voltar" (submit)="submit()" (navigate)="navigate()" [disableBtn]="!recuperacaoForm.valid">
+    <form [formGroup]="recuperacaoForm">
         <app-default-input
         inputName="name"
         type="text"
@@ -11,7 +11,7 @@
         <app-default-input
             inputName="password"
             type="password"
-            placeholder="Digite sua senha"
+            placeholder="Digite sua nova senha"
             formControlName="password"
         >
         </app-default-input>
